@@ -1,7 +1,7 @@
 const PROJECTS = [
   {
     name: "ChainSight",
-    role: "Solo, full-stack · In development",
+    role: "Solo · Full-Stack · In Development",
     status: "Active",
     stack: ["Django REST", "React", "React Native", "PostgreSQL", "Redis", "Celery", "ESP32/DHT22"],
     shot: null as string | null,
@@ -14,7 +14,7 @@ const PROJECTS = [
   },
   {
     name: "MultiVerse AI",
-    role: "Solo, full-stack",
+    role: "Solo · Full-Stack",
     status: null,
     stack: ["Spring Boot", "Next.js", "TypeScript", "PostgreSQL", "JWT"],
     shot: null as string | null,
@@ -26,7 +26,7 @@ const PROJECTS = [
   },
   {
     name: "Rides",
-    role: "Backend contributor",
+    role: "Backend Contributor",
     status: "Active",
     stack: ["Go", "PostgreSQL + PostGIS", "Redis", "WebSockets", "MTN MoMo / Airtel Money"],
     shot: null as string | null,
@@ -38,7 +38,7 @@ const PROJECTS = [
   },
   {
     name: "NFC Tap-to-Pay",
-    role: "Solo, full-stack",
+    role: "Solo · Full-Stack",
     status: null,
     stack: ["Android (Java)", "NFC/HCE", "Spring Boot", "PostgreSQL"],
     shot: null as string | null,
@@ -50,7 +50,7 @@ const PROJECTS = [
   },
   {
     name: "Energy Consumption Prediction",
-    role: "Capstone — Big Data Analytics",
+    role: "Capstone · Big Data Analytics",
     status: null,
     stack: ["Python", "scikit-learn", "pandas", "Power BI"],
     shot: null as string | null,
@@ -87,7 +87,7 @@ export default function Home() {
               <a href="#experience" className="hide-sm">Experience</a>
               <a href="#toolkit"    className="hide-sm">Toolkit</a>
               <a href="#contact">Contact</a>
-              <a href="/cv.pdf" download className="cv">CV ↓</a>
+              <a href="/cv.pdf" download className="cv">Download CV</a>
             </nav>
           </div>
         </div>
@@ -100,8 +100,10 @@ export default function Home() {
             Backend &amp;<br />full-stack<br />engineer.
           </h1>
           <p className="lede">
-            I build systems end to end — REST APIs, data pipelines, mobile clients and IoT
-            telemetry. Based in <b>Kigali, Rwanda</b>. Currently <b>CTO at HauxHunt</b>.
+            Full-stack engineer with a focus on backend architecture — distributed systems,
+            real-time data pipelines, mobile clients and IoT telemetry. Based in{" "}
+            <b>Kigali, Rwanda</b>. Currently serving as <b>CTO at HauxHunt</b>, leading
+            technical strategy across web, iOS and Android.
           </p>
           <div className="now-line">
             <span>Java · Python · Go · TypeScript</span>
@@ -130,7 +132,7 @@ export default function Home() {
                   {p.stack.map(t => <li key={t}>{t}</li>)}
                 </ul>
                 <a href={p.href} target="_blank" rel="noopener noreferrer" className="repo">
-                  GitHub ↗
+                  View on GitHub
                 </a>
               </div>
 
@@ -138,7 +140,7 @@ export default function Home() {
                 <h3>{p.name}</h3>
                 {p.note && (
                   <p style={{ color: "var(--ember)", fontSize: "14px", marginBottom: "10px" }}>
-                    ✦ {p.note}
+                    {p.note}
                   </p>
                 )}
                 <ul className="points">
@@ -167,7 +169,7 @@ export default function Home() {
               <span className="status">Active</span>
             </div>
             <div>
-              <h3>CTO <span className="org">— HauxHunt</span></h3>
+              <h3>CTO <span className="org">at HauxHunt</span></h3>
               <p>
                 Multi-market property rental platform for Rwanda and Nigeria, covering web, iOS and Android.
               </p>
@@ -184,7 +186,7 @@ export default function Home() {
               <span>CGPA 17.63 / 20</span>
             </div>
             <div>
-              <h3>BSc Software Engineering <span className="org">— AUCA</span></h3>
+              <h3>BSc Software Engineering <span className="org">at AUCA</span></h3>
               <p>
                 Adventist University of Central Africa, Faculty of Information Technology.
                 Coursework spanning algorithms, distributed systems, databases, cloud computing and big data analytics.
@@ -220,7 +222,7 @@ export default function Home() {
             Open to new<br />opportunities.
           </h2>
           <p>
-            Backend, full-stack and cloud engineering roles. I reply to every message.
+            Available for backend, full-stack and cloud engineering roles. Every message gets a reply.
           </p>
           <div className="channels">
             <div>
@@ -239,7 +241,7 @@ export default function Home() {
             </div>
             <div>
               <span>CV</span>
-              <a href="/cv.pdf" download>Download PDF ↓</a>
+              <a href="/cv.pdf" download>Download PDF</a>
             </div>
           </div>
         </div>
