@@ -194,9 +194,27 @@ export default function CV() {
         }
 
         @media print {
-          html, body { font-size: 9.5pt; }
-          .page { padding: 28px 36px 40px; max-width: 100%; }
-          .section { margin-top: 16px; }
+          @page { size: A4; margin: 14mm 16mm; }
+          html, body { font-size: 8pt; line-height: 1.4; }
+          .page { padding: 0; max-width: 100%; }
+          .cv-header { padding-bottom: 10px; margin-bottom: 12px; }
+          .cv-name { font-size: 20pt; }
+          .cv-title { font-size: 8.5pt; margin-top: 3px; }
+          .cv-contact { margin-top: 6px; gap: 3px 14px; font-size: 7.5pt; }
+          .section { margin-top: 11px; }
+          .section-title { font-size: 6.5pt; padding-bottom: 3px; margin-bottom: 8px; }
+          .skills-grid { gap: 3px 12px; }
+          .skill-label { font-size: 7.5pt; }
+          .skill-value { font-size: 7.5pt; }
+          .entry { margin-bottom: 8px; gap: 0 12px; }
+          .entry-title { font-size: 8.5pt; }
+          .entry-sub { font-size: 7.5pt; margin-top: 1px; }
+          .entry-date { font-size: 7.5pt; }
+          .entry-body { margin-top: 4px; }
+          ul.pts li { font-size: 7.5pt; margin-bottom: 3px; padding-left: 12px; }
+          .stack-line { font-size: 7pt; margin-bottom: 3px; }
+          .profile-text { font-size: 7.5pt; line-height: 1.45; }
+          .edu-cgpa { font-size: 7.5pt; padding: 1px 6px; }
           a { color: inherit !important; }
         }
       `}</style>
