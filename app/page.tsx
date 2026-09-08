@@ -122,39 +122,27 @@ export default function Home() {
       <section id="work">
         <div className="shell">
           <h2 className="sec-head">Selected work</h2>
-
-          {PROJECTS.map((p) => (
-            <div key={p.name} className="entry">
-              <div className="rail-col">
-                <span>{p.role}</span>
-                {p.status && <span className="status">{p.status}</span>}
-                <ul className="stack" style={{ marginTop: "4px" }}>
-                  {p.stack.map(t => <li key={t}>{t}</li>)}
-                </ul>
-                <a href={p.href} target="_blank" rel="noopener noreferrer" className="repo">
-                  View on GitHub
-                </a>
-              </div>
-
-              <div>
-                <h3>{p.name}</h3>
-                {p.note && (
-                  <p style={{ color: "var(--ember)", fontSize: "14px", marginBottom: "10px" }}>
-                    {p.note}
-                  </p>
-                )}
+          <div className="proj-grid">
+            {PROJECTS.map((p) => (
+              <div key={p.name} className="proj-card">
+                <div className="proj-card-top">
+                  <div className="proj-meta">
+                    {p.status && <span className="status">{p.status}</span>}
+                    <span className="proj-role">{p.role}</span>
+                  </div>
+                  <a href={p.href} target="_blank" rel="noopener noreferrer" className="proj-link">GitHub ↗</a>
+                </div>
+                <h3 className="proj-name">{p.name}</h3>
+                {p.note && <p className="proj-note">{p.note}</p>}
                 <ul className="points">
                   {p.body.map(b => <li key={b}>{b}</li>)}
                 </ul>
-                {p.shot && (
-                  <div className="shot">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={p.shot} alt={`${p.name} screenshot`} />
-                  </div>
-                )}
+                <ul className="stack">
+                  {p.stack.map(t => <li key={t}>{t}</li>)}
+                </ul>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -163,42 +151,31 @@ export default function Home() {
         <div className="shell">
           <h2 className="sec-head">Experience &amp; education</h2>
 
-          <div className="exp-cards">
-
-            <div className="exp-card">
-              <div className="exp-card-top">
-                <div>
-                  <div className="exp-badge">July 2026 – Present</div>
-                  <span className="status" style={{marginTop:"10px"}}>Active</span>
-                </div>
-                <div className="exp-card-body">
-                  <h3>Chief Technology Officer <span className="org">at HauxHunt</span></h3>
-                  <p className="exp-desc">Multi-market property rental platform for Rwanda and Nigeria, covering web, iOS and Android.</p>
-                  <ul className="points">
-                    <li>Own the backend architecture and API design covering tenant search, applications, landlord listing management, messaging, notifications and identity verification.</li>
-                    <li>Set technical direction for trust and verification, offline handling for intermittent-connectivity markets, and role-based admin access.</li>
-                    <li>Coordinate backend, frontend, mobile and DevOps work, and translate product flows into backend requirements.</li>
-                  </ul>
-                </div>
-              </div>
+          <div className="entry">
+            <div className="rail-col">
+              <span>July 2026 – Present</span>
+              <span className="status">Active</span>
             </div>
-
-            <div className="exp-card exp-card-edu">
-              <div className="exp-card-top">
-                <div>
-                  <div className="exp-cgpa">17.63<span>/20</span></div>
-                  <div className="exp-cgpa-label">CGPA</div>
-                </div>
-                <div className="exp-card-body">
-                  <h3>BSc Software Engineering <span className="org">at AUCA</span></h3>
-                  <p className="exp-desc">Adventist University of Central Africa · Faculty of Information Technology. Algorithms, distributed systems, databases, cloud computing and big data analytics.</p>
-                  <ul className="points">
-                    <li>Capstone (Big Data Analytics): household energy prediction on 19,735 records — best model Random Forest at R² 0.547 and RMSE 67.3 Wh, delivered as an interactive Power BI dashboard.</li>
-                  </ul>
-                </div>
-              </div>
+            <div>
+              <h3>Chief Technology Officer <span className="org">at HauxHunt</span></h3>
+              <p>Multi-market property rental platform for Rwanda and Nigeria, covering web, iOS and Android.</p>
+              <ul className="points">
+                <li>Own the backend architecture and API design covering tenant search, applications, landlord listing management, messaging, notifications and identity verification.</li>
+                <li>Set technical direction for trust and verification, offline handling for intermittent-connectivity markets, and role-based admin access.</li>
+                <li>Coordinate backend, frontend, mobile and DevOps work, and translate product flows into backend requirements.</li>
+              </ul>
             </div>
+          </div>
 
+          <div className="entry">
+            <div className="rail-col">
+              <span>CGPA 17.63 / 20</span>
+            </div>
+            <div>
+              <h3>BSc Software Engineering <span className="org">at AUCA</span></h3>
+              <p>Adventist University of Central Africa, Faculty of Information Technology. Coursework spanning algorithms, distributed systems, databases, cloud computing and big data analytics.</p>
+              <p>Capstone (Big Data Analytics): household energy prediction on 19,735 records — best model Random Forest at R² 0.547 and RMSE 67.3 Wh, delivered as an interactive Power BI dashboard.</p>
+            </div>
           </div>
         </div>
       </section>

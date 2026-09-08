@@ -271,61 +271,63 @@ ul.points li::before {
 }
 .shot img { display: block; width: 100%; height: auto; }
 
-/* ---------------- experience cards ---------------- */
-.exp-cards { display: flex; flex-direction: column; gap: 16px; }
-.exp-card {
-  border: 1px solid var(--line-strong);
-  border-left: 3px solid var(--orange);
-  background: var(--panel);
-  padding: 28px 32px;
-}
-.exp-card-edu { border-left-color: var(--ember); }
-.exp-card-top {
+/* ---------------- project cards ---------------- */
+.proj-grid {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 0 32px;
-  align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
 }
-.exp-badge {
+.proj-card {
+  background: var(--void);
+  padding: 32px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: background 0.15s ease;
+}
+.proj-card:hover { background: var(--panel); }
+.proj-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.proj-meta { display: flex; flex-direction: column; gap: 5px; }
+.proj-role {
   font-family: var(--font-display);
-  font-weight: 700;
   font-size: 12px;
-  color: var(--bone);
-  background: var(--orange);
-  padding: 4px 10px;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-.exp-cgpa {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 2.2rem;
-  color: var(--ember);
-  letter-spacing: -0.04em;
-  line-height: 1;
-}
-.exp-cgpa span { font-size: 1rem; color: var(--dim); }
-.exp-cgpa-label {
-  font-family: var(--font-display);
-  font-size: 11px;
   color: var(--dim);
-  margin-top: 4px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
-.exp-card-body h3 {
+.proj-name {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.3rem;
-  letter-spacing: -0.02em;
-  margin-bottom: 8px;
+  font-size: 1.35rem;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--bone);
 }
-.exp-desc { color: var(--dim); font-size: 15px; margin-bottom: 12px; }
-@media (max-width: 780px) {
-  .exp-card-top { grid-template-columns: 1fr; gap: 12px 0; }
-  .exp-card { padding: 20px; }
+.proj-note {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--ember);
 }
-
+.proj-link {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--orange);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+.proj-link:hover { color: var(--ember); }
+.proj-card ul.points { margin-top: 0; }
+.proj-card .stack { margin-top: auto; padding-top: 6px; }
+@media (max-width: 720px) {
+  .proj-grid { grid-template-columns: 1fr; }
+}
 
 .kit { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px 46px; }
 .kit h3 {
