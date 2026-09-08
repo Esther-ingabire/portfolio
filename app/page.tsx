@@ -87,7 +87,7 @@ export default function Home() {
               <a href="#experience" className="hide-sm">Experience</a>
               <a href="#toolkit"    className="hide-sm">Toolkit</a>
               <a href="#contact">Contact</a>
-              <a href="/cv.pdf" download className="cv">Download CV</a>
+              <a href="/cv" target="_blank" className="cv">CV</a>
             </nav>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function Home() {
           <div className="actions">
             <a href="#work"    className="btn btn-primary">See my work</a>
             <a href="#contact" className="btn">Get in touch</a>
-            <a href="/cv.pdf" download className="btn">Download CV</a>
+            <a href="/cv" target="_blank" className="btn">View CV</a>
           </div>
         </div>
       </div>
@@ -241,7 +241,7 @@ export default function Home() {
             </div>
             <div>
               <span>CV</span>
-              <a href="/cv.pdf" download>Download PDF</a>
+              <a href="/cv" target="_blank">View CV</a>
             </div>
           </div>
         </div>
