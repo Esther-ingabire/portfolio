@@ -271,7 +271,62 @@ ul.points li::before {
 }
 .shot img { display: block; width: 100%; height: auto; }
 
-/* ---------------- toolkit ---------------- */
+/* ---------------- experience cards ---------------- */
+.exp-cards { display: flex; flex-direction: column; gap: 16px; }
+.exp-card {
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--orange);
+  background: var(--panel);
+  padding: 28px 32px;
+}
+.exp-card-edu { border-left-color: var(--ember); }
+.exp-card-top {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0 32px;
+  align-items: start;
+}
+.exp-badge {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--bone);
+  background: var(--orange);
+  padding: 4px 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.exp-cgpa {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.2rem;
+  color: var(--ember);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.exp-cgpa span { font-size: 1rem; color: var(--dim); }
+.exp-cgpa-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--dim);
+  margin-top: 4px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.exp-card-body h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.exp-desc { color: var(--dim); font-size: 15px; margin-bottom: 12px; }
+@media (max-width: 780px) {
+  .exp-card-top { grid-template-columns: 1fr; gap: 12px 0; }
+  .exp-card { padding: 20px; }
+}
+
+
 .kit { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px 46px; }
 .kit h3 {
   font-family: var(--font-display);
