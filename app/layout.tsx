@@ -1,16 +1,42 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Archivo, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const url = "https://esther-ingabire.vercel.app";
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
+});
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+const url = "https://esther-ingabire-portfolio.vercel.app";
 const blurb =
-  "Backend and full-stack engineer in Kigali, Rwanda. Supply-chain analytics, ride-hailing and payment systems in Python, Java and Go.";
+  "Backend engineer in Kigali, Rwanda, building APIs, backend systems and the products they power. Currently CTO at HauxHunt.";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0C0A09",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
-  title: "Esther Ingabire — Backend & Full-Stack Engineer",
+  title: "Esther Ingabire · Backend Engineer",
   description: blurb,
   openGraph: {
-    title: "Esther Ingabire — Backend & Full-Stack Engineer",
+    title: "Esther Ingabire · Backend Engineer",
     description: blurb,
     url,
     siteName: "Esther Ingabire",
@@ -19,23 +45,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Esther Ingabire — Backend & Full-Stack Engineer",
+    title: "Esther Ingabire · Backend Engineer",
     description: blurb,
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>{children}</body>
+    <html lang="en" className={`${archivo.variable} ${inter.variable} ${mono.variable}`}>
+      <body>
+        <a href="#main" className="skip-link">Skip to content</a>
+        {children}
+      </body>
     </html>
   );
 }
